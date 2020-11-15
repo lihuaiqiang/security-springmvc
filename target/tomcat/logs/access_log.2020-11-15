@@ -8,3 +8,5 @@
 0:0:0:0:0:0:0:1 - - [15/Nov/2020:22:55:33 +0800] "GET /security-springmvc/ HTTP/1.1" 200 328 http-bio-8080-exec-8 6
 0:0:0:0:0:0:0:1 - - [15/Nov/2020:22:55:38 +0800] "POST /security-springmvc/login HTTP/1.1" 200 16 http-bio-8080-exec-9 4
 0:0:0:0:0:0:0:1 - - [15/Nov/2020:22:55:57 +0800] "GET /security-springmvc/r/r1 HTTP/1.1" 200 30 http-bio-8080-exec-10 12879
+0:0:0:0:0:0:0:1 - - [15/Nov/2020:22:56:11 +0800] "GET /security-springmvc/r/r1 HTTP/1.1" 200 30 http-bio-8080-exec-10 10033
+0:0:0:0:0:0:0:1 - - [15/Nov/2020:23:01:17 +0800] "GET /security-springmvc/r/r1 HTTP/1.1" 200 30 http-bio-8080-exec-10 298032
