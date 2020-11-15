@@ -64,7 +64,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     {
         //用户1的访问权限
         Set<String> authorities1 = new HashSet<>();
-        //这个p1我们人为让它和/r/r1对应
+        //这个p1我们人为让它和/r/r1对应，p1权限标识符
         authorities1.add("p1");
         //用户2的访问权限
         Set<String> authorities2 = new HashSet<>();

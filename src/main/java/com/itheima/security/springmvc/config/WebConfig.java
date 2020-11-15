@@ -1,11 +1,14 @@
 package com.itheima.security.springmvc.config;
 
+import com.itheima.security.springmvc.interceptor.SimpleAuthenticationInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -19,7 +22,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * 即：用来开启Web MVC的配置支持。也就是写Spring MVC时的时候会用到。
  * <p>
  * 这里的扫描就要包括Controller注解标注的类。
- *
+ * <p>
  * 这个类就相当于spring-mvc.xml文件
  */
 @Configuration
@@ -28,8 +31,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
         , includeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = Controller.class)})
 public class WebConfig implements WebMvcConfigurer {
 
-    /*@Autowired
-    SimpleAuthenticationInterceptor simpleAuthenticationInterceptor;*/
+    @Autowired
+    SimpleAuthenticationInterceptor simpleAuthenticationInterceptor;
 
     //视频解析器
     @Bean
@@ -45,8 +48,13 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("login");
     }
 
-    /*@Override
+    /**
+     * @param registry
+     *
+     * 让我们写的拦截器生效
+     */
+    @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(simpleAuthenticationInterceptor).addPathPatterns("/r/**");
-    }*/
+    }
 }

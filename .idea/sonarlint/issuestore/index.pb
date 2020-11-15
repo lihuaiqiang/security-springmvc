@@ -17,3 +17,7 @@ Lsrc/main/java/com/itheima/security/springmvc/mode/AuthenticationRequest.java,1
 Osrc/main/java/com/itheima/security/springmvc/service/AuthenticationService.java,2\b\2be0980899a6917f38ea5ccd28565ab131124ddc
 É
 Ssrc/main/java/com/itheima/security/springmvc/service/AuthenticationServiceImpl.java,1\f\1fcb9a7f75df16e9dcb72562987e30e358aa903f
+ç
+]src/main/java/com/itheima/security/springmvc/interceptor/SimpleAuthenticationInterceptor.java,9\a\9a251d0cd201f57946c83932b619181fe3831e0f
+|
+Lsrc/main/java/com/itheima/security/springmvc/controller/LoginController.java,0\b\0b13349048ae3e0935d971508050450234c4df2b
