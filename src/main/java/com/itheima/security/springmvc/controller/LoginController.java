@@ -54,7 +54,7 @@ public class LoginController {
      *
      * 给用户分配权限模拟测试
      */
-    @GetMapping(value = "/r/r2", produces = {"text/plain;charset=UTF‐8"})
+    @GetMapping(value = "/r/r2", produces = {"text/plain;charset=UTF-8"})
     public String r2(HttpSession session) {
         String fullname = null;
         Object userObj = session.getAttribute(UserDto.SESSION_USER_KEY);
@@ -63,6 +63,6 @@ public class LoginController {
         } else {
             fullname = "匿名";
         }
-        return fullname + " 访问资源2";
+        return fullname + "：访问资源2";
     }
 }

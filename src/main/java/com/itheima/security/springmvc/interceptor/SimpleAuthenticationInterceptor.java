@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Set;
 
 /**
  * @author lihuaiqiang
@@ -40,6 +41,7 @@ public class SimpleAuthenticationInterceptor implements HandlerInterceptor {
         //从请求信息中提取请求的url地址
         String requestURI = request.getRequestURI();
         //模拟校验是否有“p1”的权限
+        Set<String> authorities = userDto.getAuthorities();
         if (userDto.getAuthorities().contains("p1") && requestURI.contains("/r/r1")) {
             return true;
         }
@@ -61,6 +63,6 @@ public class SimpleAuthenticationInterceptor implements HandlerInterceptor {
         writer.print(message);
         writer.close();
         //清楚response中的缓存
-        response.resetBuffer();
+//        response.resetBuffer();
     }
 }
